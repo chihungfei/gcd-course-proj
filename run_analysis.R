@@ -1,6 +1,6 @@
 
-## 1) Merges the training and the test sets to create one data set
-## will be handled in this function called merge_data(directory)
+## STEP 1, Merge data
+
   merge_data <- function(directory) {
   ## read the dataset in test and train sets
   path <- paste("./", directory, "/test/X_test.txt", sep="")
@@ -38,9 +38,9 @@
   return (all_data)
 }
 
-## 2) Extracts only the measurements on the mean and standard deviation for each measurement
-## This is handled inside this function extract_mean_std(data_set, directory)
-extract_mean_std <- function(data_set, directory) {
+## STEP 2, Extract data
+
+  extract_mean_std <- function(data_set, directory) {
   path <- paste("./", directory, "/features.txt", sep="")
   features_data <- read.table(path)
   ## usually the columns is a data.table where V1 is the column number
@@ -66,14 +66,10 @@ extract_mean_std <- function(data_set, directory) {
   return (extracted_data_set)
 }
 
-## 3) Uses descriptive activity names to name the activities in the data set
-## this is done inside the merge_data and extract_mean_std functions
-## 4) Appropriately labels the data set with descriptive activity names
-## this is also done inside the merge_data and extract_mean_std functions
-## 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject
-## This is done inside the melt_data function
-melt_data_and_write_tidy_set <- function(data_set, path_to_tidyset_file) {
-  ## let's melt the data
+
+##STEP 3-5, Get tidy data
+
+  melt_data_and_write_tidy_set <- function(data_set, path_to_tidyset_file) {
   require(reshape2)
   melted_data <- melt(data_set, id=c("Subject","Activity_Id","Activity"))
   
