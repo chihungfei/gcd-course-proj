@@ -3,7 +3,7 @@ Description: Write a code book that describes the variables, the data, and any t
 
 ## Variables
 
-On lines 109-111 of run_analysis.R,
+On lines 96-98 of run_analysis.R,
 
 ```
 merged_data <- merge_data("UCI HAR Dataset")
