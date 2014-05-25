@@ -92,12 +92,3 @@
 merged_data <- merge_data("UCI HAR Dataset")
 extracted_mean_std_data_set <- extract_mean_std(merged_data, "UCI HAR Dataset")
 melt_data_and_write_tidy_set(extracted_mean_std_data_set, "./tidyset.txt")
-
-## just to double check you can read the tidyset if you wished
-read_tidy_set <- function(path_to_tidyset_file) {
-  tidy_set <- read.table(path_to_tidyset_file)
-  
-  return (tidy_set)
-}
-## uncomment below to read the tidyset inside the text file
-## tidy_set <- read_tidy_set("./tidyset.txt")
