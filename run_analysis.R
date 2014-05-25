@@ -1,7 +1,7 @@
 
 ## 1) Merges the training and the test sets to create one data set
 ## will be handled in this function called merge_data(directory)
-merge_data <- function(directory) {
+  merge_data <- function(directory) {
   ## read the dataset in test and train sets
   path <- paste("./", directory, "/test/X_test.txt", sep="")
   test_data <- read.table(path)
